@@ -21,4 +21,26 @@ sonrasında saatlerce yolları düzeltim ve reacti olşturdum.
 
 tailwind çalışmadı 2 saat tekrar kurumu ile uğraştım ve görev başarılı
 
+<!-- 24 haziran -->
+
+flight card stilini tamamlazım card list olarak çalıştırdım
+
 <!-- 25 haziran -->
+
+flaightDetails ilk adımlarını kurdum daha çok header kısmı ile uğraştım
+verileri tamamladım detail için uçağın arka rengi ayarladık
+card detaila basınca card details verileri çiksın diye useMemo kullandık
+querySelector dosyasını oluşturduk
+
+<!-- 26 haziran -->
+
+logo flag ve plane fotoğrafları çıkartım onların yollarını oluşturdum tekrardan verileri düzeltim sonrasında header altındaki verileri ekledim elimde geliş gidiş olduğu için çok bir şey yapamadım sonra maxtan gelen videodan verileri aldım yine sadece gidiş geiş verilerini ve header üstündeki uçak ismini inşa ettik
+
+ <!-- 27 haziran -->
+
+Fligt detailsi bölüm böüm ayırdık flight status flight route flight action diye
+hepsini tek tek girdim sonra kutu kutu ayırdık verilerini girdik sonra ortaladık üstünde sonrasında header üstündeki uçak köşeye gitti onu ortalamak için uğrağştım sonrasında details içindeki kutucukların rengi yuvarlaması padingleri düzeltim ve sonrasında dark white tuşuna geçtim
+
+ <!-- 28 haziran -->
+
+yeterli kadar verim yoktu dark ve white modu yapmam için onu ekledim fonksiyon yazdım ancak çalışmadı çok uğraştım ilk başta wihte sınıfı almıyordu sonrasında renk değiştimıyordu sonrasında base kısmını silip düzeldi

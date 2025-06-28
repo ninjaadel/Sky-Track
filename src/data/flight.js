@@ -1,51 +1,17 @@
-import logo from "../constans/images";
+import { logo } from "../constans/images";
 
-// export const flights = [
-//   {
-//     airline: "TK143",
-//     from: "Sofia",
-//     fromCode: "SOF",
-//     to: "Beijing",
-//     toCode: "PEK",
-//     flightNumber: "TK143",
-//     aircraftReg: "TC-JFP",
-//     logo: logo.turkish,
-//   },
-//   {
-//     airline: "RN1782",
-//     from: "Dublin",
-//     fromCode: "DUB",
-//     to: "Larnaca",
-//     toCode: "LCA",
-//     flightNumber: "RN1782",
-//     aircraftReg: "D-AISP",
-//     logo: logo.swiss,
-//   },
-//   {
-//     airline: "S7124",
-//     from: "Nice",
-//     fromCode: "NCE",
-//     to: "Tbilisi",
-//     toCode: "TBS",
-//     flightNumber: "S7124",
-//     aircraftReg: "RA-73415",
-//     logo: logo.s7,
-//   },
-//   {
-//     airline: "LX318",
-//     from: "Porto",
-//     fromCode: "OPO",
-//     to: "Baku",
-//     toCode: "GYD",
-//     flightNumber: "LX318",
-//     aircraftReg: "HB-JHK",
-//     logo: logo.rynair,
-//   },
-// ];
+import { Plane } from "../constans/images";
+
+import { Flags } from "../constans/images";
 export const flights = [
   {
     logo: logo.turkish,
-    airline: "TK143",
+    id: "TK143",
+    airline: {
+      name: "Turkish Airlines",
+      country: "Turkey",
+    },
+    airlineCountryFlag: Flags.turkey,
     aircraftReg: "TC-JFP",
     from: {
       city: "Sofia",
@@ -62,7 +28,7 @@ export const flights = [
       code: "PEK",
     },
     airplane: {
-      image: logo.turkish,
+      image: Plane.turkish,
       name: "Airbus A330",
     },
     colorGradient: ["#ffdede", "#ffbaba"],
@@ -70,10 +36,22 @@ export const flights = [
       speed: 870,
       altitude: 10600,
     },
+    schedule: {
+      scheduledDeparture: "2025-06-27T10:00:00+03:00",
+      actualDeparture: "2025-06-27T10:05:00+03:00",
+      scheduledArrival: "2025-06-27T22:30:00+08:00",
+      estimatedArrival: "2025-06-27T22:15:00+08:00",
+      status: "en-route",
+    },
   },
   {
     logo: logo.rynair,
-    airline: "RN1782",
+    id: "RN1782",
+    airline: {
+      name: "Ryanair",
+      country: "Ireland",
+    },
+    airlineCountryFlag: Flags.ireland,
     aircraftReg: "D-AISP",
     from: {
       city: "Dublin",
@@ -90,7 +68,7 @@ export const flights = [
       code: "LCA",
     },
     airplane: {
-      image: logo.rynair,
+      image: Plane.rynair,
       name: "Boeing 737-800",
     },
     colorGradient: ["#A1C6E1", "#88B5E0"],
@@ -98,10 +76,22 @@ export const flights = [
       speed: 840,
       altitude: 11200,
     },
+    schedule: {
+      scheduledDeparture: "2025-06-27T15:00:00+01:00",
+      actualDeparture: "2025-06-27T15:00:00+01:00",
+      scheduledArrival: "2025-06-27T20:20:00+03:00",
+      estimatedArrival: "2025-06-27T20:25:00+03:00",
+      status: "departed",
+    },
   },
   {
     logo: logo.lufthansa,
-    airline: "S7124",
+    id: "S7124",
+    airline: {
+      name: "Lufthansa",
+      country: "Germany",
+    },
+    airlineCountryFlag: Flags.german,
     aircraftReg: "RA-73415",
     from: {
       city: "Nice",
@@ -118,7 +108,7 @@ export const flights = [
       code: "TBS",
     },
     airplane: {
-      image: logo.lufthansa,
+      image: Plane.lufthansa,
       name: "Airbus A320neo",
     },
     colorGradient: ["#d6ffe5", "#96f2c1"],
@@ -126,10 +116,22 @@ export const flights = [
       speed: 860,
       altitude: 10900,
     },
+    schedule: {
+      scheduledDeparture: "2025-06-27T07:45:00+02:00",
+      actualDeparture: null,
+      scheduledArrival: "2025-06-27T12:55:00+04:00",
+      estimatedArrival: null,
+      status: "scheduled",
+    },
   },
   {
     logo: logo.s7,
-    airline: "LX318",
+    id: "LX318",
+    airline: {
+      name: "S7 Airlines",
+      country: "Russia",
+    },
+    airlineCountryFlag: Flags.russia,
     aircraftReg: "HB-JHK",
     from: {
       city: "Porto",
@@ -146,7 +148,7 @@ export const flights = [
       code: "GYD",
     },
     airplane: {
-      image: logo.s7,
+      image: Plane.s7,
       name: "Airbus A220-300",
     },
     colorGradient: ["#e6e6ff", "#a8b4ff"],
@@ -154,10 +156,22 @@ export const flights = [
       speed: 830,
       altitude: 10700,
     },
+    schedule: {
+      scheduledDeparture: "2025-06-27T18:20:00+01:00",
+      actualDeparture: "2025-06-27T19:10:00+01:00",
+      scheduledArrival: "2025-06-27T23:50:00+04:00",
+      estimatedArrival: "2025-06-28T00:30:00+04:00",
+      status: "delayed",
+    },
   },
   {
     logo: logo.swiss,
-    airline: "LH401",
+    id: "LH401",
+    airline: {
+      name: "SWISS",
+      country: "Switzerland",
+    },
+    airlineCountryFlag: Flags.switzerland,
     aircraftReg: "D-AIXD",
     from: {
       city: "Burgas",
@@ -174,13 +188,20 @@ export const flights = [
       code: "MCT",
     },
     airplane: {
-      image: logo.swiss,
+      image: Plane.swiss,
       name: "Airbus A350-900",
     },
     colorGradient: ["#e5f2ff", "#9dd2f9"],
     route: {
       speed: 890,
       altitude: 11300,
+    },
+    schedule: {
+      scheduledDeparture: "2025-06-27T14:30:00+03:00",
+      actualDeparture: "2025-06-27T14:32:00+03:00",
+      scheduledArrival: "2025-06-27T20:40:00+04:00",
+      estimatedArrival: "2025-06-27T20:37:00+04:00",
+      status: "landed",
     },
   },
 ];

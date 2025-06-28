@@ -6,17 +6,19 @@ import Layout from "./components/layout";
 import "./App.css";
 import "./index.css";
 import { StrictMode } from "react";
+import { ThemeProvider } from "./providers/ThemeProvider";
 function App() {
   return (
     <StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route>
-            <Route element={<Layout />} />
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </StrictMode>
   );
 }
