@@ -4,10 +4,10 @@ import { MoreHorizontal, Route } from "lucide-react";
 import { MapPin, SquareArrowOutUpRight } from "lucide-react";
 export function FlightActions({ onRoute, onFollow, onShare, onMore }) {
   return (
-    <div className="grid grid-cols-4 gap-1  bg-neutral-900 pb-2">
+    <div className="grid grid-cols-4 gap-2  bg-[var(--card)] text-[var(--card-foreground)] py-2 mx-2 mb-2 rounded-xl">
       <button
         onClick={onRoute}
-        className="flex flex-col items-center gap-2 bg-card px-mini-element py-mini-element rounded-tl-2xl rounded-bl-2xl transition-colors hover:bg-neutral-800 "
+        className="flex flex-col items-center align-center gap-1  transition-colors hover:bg-[var(--background)] "
       >
         <Route size={22} />
         <span>Route</span>
@@ -15,7 +15,7 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }) {
 
       <button
         onClick={onFollow}
-        className="flex flex-col items-center gap-2 bg-card px-mini-element py-mini-element transition-colors hover:bg-neutral-800"
+        className="flex flex-col items-center gap-2  transition-colors hover:bg-[var(--background)]"
       >
         <MapPin animateOnHover size={22} />
         <span>Follow</span>
@@ -23,7 +23,7 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }) {
 
       <button
         onClick={onShare}
-        className="flex flex-col items-center gap-2 bg-card px-mini-element py-mini-element transition-colors hover:bg-neutral-800"
+        className="flex flex-col items-center gap-2 hover:bg-[var(--background)]"
       >
         <SquareArrowOutUpRight size={22} />
         <span>Share</span>
@@ -31,7 +31,7 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }) {
 
       <button
         onClick={onMore}
-        className="flex flex-col items-center gap-2 bg-card px-mini-element py-mini-element rounded-tr-2xl rounded-br-2xl transition-colors hover:bg-neutral-800"
+        className="flex flex-col items-center gap-2 transition-colors hover:bg-[var(--background)]"
       >
         <MoreHorizontal size={22} />
         <span>More</span>

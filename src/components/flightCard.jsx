@@ -36,15 +36,15 @@ export default function FlightCard({ flight, i }) {
             <span className="text-lg">{flight?.id}</span>
           </div>
           <span className="bg-[color:var(--secondary)] text-[color:var(--secondary-foreground)] rounded-xl py-1 px-2 text-sm">
-            {flight.flightNumber}
+            {flight.aircraftReg}
           </span>
         </div>
 
         {/* Uçuş Bilgisi */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center ">
           {/* Nereden */}
           <div className="space-y-0.5">
-            <div className="text-sm text-[color:var(--muted-foreground)]">
+            <div className="text-sm text-[color:var(--muted-foreground)] ">
               {flight?.from.city}
             </div>
             <div className="font-semibold text-3xl">{flight?.from.code}</div>

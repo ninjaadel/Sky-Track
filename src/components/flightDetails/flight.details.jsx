@@ -22,7 +22,7 @@ export default function FlightDetails() {
   if (!flights) return null;
 
   return (
-    <aside className="absolute w-sm top-9  -translate-y-2 right-7  rounded-xl overflow-hidden  bg-color[color:var(--bacground)]">
+    <aside className="absolute w-sm top-9  -translate-y-2 right-7  rounded-xl overflow-hidden  bg-[var(--chart-1)] text-[var(--card-foreground)] ">
       <FlightHeader flight={flight} />
       <FlightImage flight={flight} />
 
