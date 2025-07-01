@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
-import { flightQueryKey } from "../data/for-query_param";
-import { cn } from "../../utils/cn";
+import { flightQueryKey } from "../../data/for-query_param";
+import { cn } from "../../../utils/cn";
 
 export default function FlightCard({ flight, i }) {
   const [searchParams, setSearchParams] = useSearchParams();

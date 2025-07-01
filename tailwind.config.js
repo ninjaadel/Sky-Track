@@ -1,41 +1,37 @@
 // tailwind.config.js
 const plugin = require("tailwindcss/plugin");
 
-export default {
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    screens: {
+      xxs: "360px",
+      xs: "480px",
+      sm: "500px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        card: "var(--card)",
-        "card-foreground": "var(--card-foreground)",
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        // vs...
+        // özel renklerin buraya
       },
       borderRadius: {
-        sm: "var(--radius-s)",
-        DEFAULT: "var(--radius)",
-        lg: "var(--radius-l)",
-        xl: "var(--radius-xl)",
+        // özel border-radius değerlerin buraya
       },
       spacing: {
-        element: "var(--spacing-element)",
-        "mini-element": "var(--spacing-mini-element)",
+        // özel spacing tanımların buraya
       },
     },
   },
   plugins: [
     plugin(({ addBase }) => {
-      addBase({
-        html: {
-          color: "var(--foreground)",
-          backgroundColor: "var(--background)",
-        },
-      });
+      // base stiller buraya
+    }),
+    plugin(({ addVariant }) => {
+      // özel variantlar buraya
     }),
   ],
 };

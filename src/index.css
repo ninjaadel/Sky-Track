@@ -10,6 +10,7 @@ body {
   color: var(--foreground);
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
+  box-sizing: border-box;
 }
 
 :root {
@@ -114,11 +115,30 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* @layer base {
-  html.dark {
-    @apply bg-black text-white;
-  }
-  html.light {
-    @apply bg-white text-black;
-  }
-} */
+:root {
+  --spacing-element: calc(var(--spacing) * 6);
+  --spacing-mini-element: calc(var(--spacing) * 3);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+}
+
+/* @theme {
+  --breakpoint-*: initial;
+}
+
+@custom-variant 2xl (@media (max-width: 1650px));
+@custom-variant xl (@media (max-width: 1399px));
+@custom-variant lg (@media (max-width: 1200px));
+@custom-variant md (@media (max-width: 992px));
+@custom-variant sm (@media (max-width: 768px));
+@custom-variant xs (@media (max-width: 480px));
+@custom-variant xxs (@media (max-width: 360px)); */

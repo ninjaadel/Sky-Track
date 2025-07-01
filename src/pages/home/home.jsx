@@ -1,12 +1,12 @@
-import FlightList from "../../components/flightList";
+import FlightList from "../../components/flightCard/flightList";
 import FlightDetails from "../../components/flightDetails/flight.details";
-import { ThemeToggle } from "../../components/ThemeToggle";
+import { Header } from "../../components/header/header";
 
 export default function Home() {
   return (
     <div>
       <FlightList />
-      <ThemeToggle />
+
       <FlightDetails />
     </div>
   );
