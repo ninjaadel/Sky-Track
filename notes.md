@@ -48,3 +48,7 @@ yeterli kadar verim yoktu dark ve white modu yapmam için onu ekledim fonksiyon 
 <!-- 30 haziran -->
 
 header kısmını yaptım içersinde route uygulandı router için özel veri tuttuk sonra props şeklinde attık sonra responsive uygulamaya çalıştım ancak anlamadığım problemlerden dolayı yapamadım ya breckpoint problemi ya css baştan başa problemli
+
+<!-- 1 temmuz -->
+
+filtreleme yapıldı artık filtremelede ülke ülke seçim yapabiliyoruz
