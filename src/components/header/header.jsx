@@ -1,10 +1,11 @@
 import { useLocation } from "react-router-dom";
-import { ThemeToggle } from "../ThemeToggle";
+import { ThemeToggle } from "./ThemeToggle";
 import { HeaderMenuItem } from "./headerMenuItem";
 import { HeaderMenuItemsList } from "./HeaderMenuItems";
 import { match } from "path-to-regexp";
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function Header() {
   const location = useLocation();
@@ -34,9 +35,11 @@ export function Header() {
         </ul>
       </div>
       <div className="flex items-center gap-4 sm:p-1">
-        <Link to="/favorite">
-          <Heart />
-        </Link>
+        <Button asChild variant="outline">
+          <Link to="/favorite">
+            <Heart />
+          </Link>
+        </Button>
         <ThemeToggle />
       </div>
     </div>

@@ -2,6 +2,7 @@ import FlightCard from "./flightCard";
 import { flights } from "../../data/flight";
 import { Filter } from "../filters/filter";
 import { useMemo, useState } from "react";
+
 export default function FlightList() {
   const [fromCountry, setFromCountry] = useState();
   const FiltredCountry = useMemo(() => {
@@ -9,7 +10,7 @@ export default function FlightList() {
     return flights.filter((flight) => flight.from.country === fromCountry);
   }, [fromCountry]);
   return (
-    <div className="w-sm absolute top-5">
+    <div className="w-sm relative -mt-23">
       <Filter fromCountry={fromCountry} setFromCountry={setFromCountry} />
       <div className="space-y-4">
         {FiltredCountry.map((flight, i) => (

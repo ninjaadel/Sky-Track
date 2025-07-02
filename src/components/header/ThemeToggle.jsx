@@ -1,20 +1,22 @@
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "../providers/useTheme";
+import { useTheme } from "../../providers/useTheme";
+import { Button } from "../ui/button";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div>
-      <button
+      <Button
+        variant="outline"
         onClick={() => {
           toggleTheme();
         }}
-        className="p-2 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors
+        className="p-2 rounded-lg  transition-colors
          flex items-center justify-center sm:p-1"
       >
         {theme === "dark" ? <Moon size={24} /> : <Sun size={24} />}
-      </button>
+      </Button>
     </div>
   );
 }

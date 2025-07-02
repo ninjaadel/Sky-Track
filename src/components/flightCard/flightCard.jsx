@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { flightQueryKey } from "../../data/for-query_param";
 import { cn } from "../../../utils/cn";
+import { FlightCardActions } from "./flightActions";
 
 export default function FlightCard({ flight, i }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -10,7 +11,7 @@ export default function FlightCard({ flight, i }) {
   return (
     <div
       className={cn(
-        "rounded-[var(--radius)] p-0.5 w-full transition-colors duration-300 ease-in-out",
+        "rounded-[var(--radius)] p-0.5 w-full transition-colors duration-300 ease group",
         isActive
           ? "bg-gradient-to-r from-rose-500 to-orange-400"
           : "bg-transparent"
@@ -21,9 +22,10 @@ export default function FlightCard({ flight, i }) {
         onClick={() => {
           setSearchParams({ [flightQueryKey]: flight.id });
         }}
-        className="bg-[color:var(--card)] text-[color:var(--card-foreground)] rounded-[var(--radius)] p-[var(--spacing-element)] block w-full h-full transition-colors duration-300"
+        className="bg-[color:var(--card)] text-[color:var(--card-foreground)] rounded-[var(--radius)]  p-[var(--spacing-element)] block w-full h-full transition-colors duration-300 relative"
       >
-        {/* Üst Bilgi */}
+        <FlightCardActions flightId={flight.id} />
+
         <div className="flex justify-between items-center mb-[var(--spacing-mini-element)]">
           <div className="flex items-center gap-3">
             <img

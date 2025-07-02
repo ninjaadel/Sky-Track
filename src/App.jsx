@@ -8,20 +8,24 @@ import "./App.css";
 import "./index.css";
 import { StrictMode } from "react";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { Provider } from "react-redux";
+import { store } from "./store";
 function App() {
   return (
     <StrictMode>
       <ThemeProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/flights" element={<Flights />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/login" element={<Login />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/flights" element={<Flights />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/login" element={<Login />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </Provider>
       </ThemeProvider>
     </StrictMode>
   );
