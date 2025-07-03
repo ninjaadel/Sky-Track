@@ -52,3 +52,7 @@ header kısmını yaptım içersinde route uygulandı router için özel veri tu
 <!-- 1 temmuz -->
 
 filtreleme yapıldı artık filtremelede ülke ülke seçim yapabiliyoruz
+
+<!-- 2 temmuz  -->
+
+favorite buttonu oluşturdu ve ekran yenilendiğinde bile biz cashleri saklayıp listeyi tutabiliyoruz bunu redux ile yaptık

@@ -10,6 +10,7 @@ import { StrictMode } from "react";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import FavoriteList from "./components/header/favorite";
 function App() {
   return (
     <StrictMode>
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/flights" element={<Flights />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/favorite" element={<FavoriteList />} />
               </Route>
             </Routes>
           </BrowserRouter>
