@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { flightQueryKey } from "../../data/for-query_param";
 import { cn } from "../../../utils/cn";
 import { FlightCardActions } from "./flightActions";
+import { ProgressBar } from "../../../special/progressBar";
 
 export default function FlightCard({ flight, i }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -43,7 +44,7 @@ export default function FlightCard({ flight, i }) {
         </div>
 
         {/* Uçuş Bilgisi */}
-        <div className="flex justify-between items-center ">
+        <div className="grid grid-cols-[1fr_5fr_1fr] items-end gap-2 w-full ">
           {/* Nereden */}
           <div className="space-y-0.5">
             <div className="text-sm text-[color:var(--muted-foreground)] ">
@@ -52,8 +53,10 @@ export default function FlightCard({ flight, i }) {
             <div className="font-semibold text-3xl">{flight?.from.code}</div>
           </div>
 
-          {/* Progress Bar */}
-          <div className="h-1 w-16 bg-[color:var(--border)] rounded-full mx-2" />
+          {/* Uçak Bilgisi */}
+          <div className="-translate-y-1">
+            <ProgressBar percentage={flight?.progress} />
+          </div>
 
           {/* Nereye */}
           <div className="space-y-0.5 text-right">

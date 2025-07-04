@@ -56,3 +56,7 @@ filtreleme yapıldı artık filtremelede ülke ülke seçim yapabiliyoruz
 <!-- 2 temmuz  -->
 
 favorite buttonu oluşturdu ve ekran yenilendiğinde bile biz cashleri saklayıp listeyi tutabiliyoruz bunu redux ile yaptık
+
+<!-- 3 temmuz  -->
+
+bugun favori listem için yeni bir sayfa yaptım router oluşturdum ve reduz sayesinde sakladığım veriye favorite sayfasına aktardım

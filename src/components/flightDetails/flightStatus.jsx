@@ -1,18 +1,24 @@
-import React from "react";
-export function FlightStatus() {
+import { ProgressBar } from "../../../special/progressBar";
+
+export function FlightStatus({ flight }) {
   return (
-    <div className="flex justify-between text-sm opacity-70 p-2 text-[--status-foreground] bg-[var(--status)] mx-2 mb-1">
-      <div>
-        <span>2 715km</span>
-        <span className="mx-2">
-          <span>3h 1m</span>
-        </span>
+    <div>
+      <div className="mx-3 my-3">
+        <ProgressBar percentage={flight?.progress} />
       </div>
-      <div>
-        <span>882 km</span>
-        <span className="mx-2">
-          <span>59 min</span>
-        </span>
+      <div className="flex justify-between gap-2">
+        <div className="mx-3">
+          <span>2 715km</span>
+          <span className="">
+            <span>3h 1m</span>
+          </span>
+        </div>
+        <div>
+          <span>882 km</span>
+          <span className="mx-3">
+            <span>59 min</span>
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ export default function FlightDetails() {
     >
       <FlightHeader flight={flight} />
       <FlightImage flight={flight} />
-      <div className="p-3.5"></div>
+      <div className="p-1"></div>
       <FlightRoute flight={flight} />
       <FlightStatus flight={flight} />
       <FlightSchedule flight={flight} />
