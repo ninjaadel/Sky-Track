@@ -60,3 +60,18 @@ favorite buttonu oluşturdu ve ekran yenilendiğinde bile biz cashleri saklayıp
 <!-- 3 temmuz  -->
 
 bugun favori listem için yeni bir sayfa yaptım router oluşturdum ve reduz sayesinde sakladığım veriye favorite sayfasına aktardım
+
+
+<!-- 4 temmuz  -->
+flight status inşa edildi artık hem liste de hem detailste flight status kontrolu uçak kontrolü ile yapılıyor
+
+
+<!-- 7 temmuz -->
+ıskeleton yaptım flight list içine ve timeaout ile artık her sayfa yenilendiğinde ıskeleton çalışıyor
+
+
+<!-- 8 temmuz ve 9 temmuz-->
+
+responsive için uğraştım çok zorluk çektim normalde çalışması gereken responsive çalışmıyor onu alternativini arayarak tasarlıysbildim
+
+

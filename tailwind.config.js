@@ -1,37 +1,20 @@
-// tailwind.config.js
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
   theme: {
+    extend: {
+      // özelleştirme alanların
+    },
     screens: {
       xxs: "360px",
       xs: "480px",
-      sm: "500px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
-    },
-    extend: {
-      colors: {
-        // özel renklerin buraya
-      },
-      borderRadius: {
-        // özel border-radius değerlerin buraya
-      },
-      spacing: {
-        // özel spacing tanımların buraya
-      },
+      sm: "768px",
+      md: "992px",
+      lg: "1200px",
+      xl: "1399px",
+      "2xl": "1650px",
     },
   },
-  plugins: [
-    plugin(({ addBase }) => {
-      // base stiller buraya
-    }),
-    plugin(({ addVariant }) => {
-      // özel variantlar buraya
-    }),
-  ],
+  plugins: [plugin(...), plugin(...)],
 };

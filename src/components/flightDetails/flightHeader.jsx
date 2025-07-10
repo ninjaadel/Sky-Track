@@ -8,7 +8,7 @@ export function FlightHeader({ flight }) {
   return (
     <div
       className="bg-[var(--background)]  rounded-xl px-4 py-3 flex items-center justify-between
-    absolute top-3 right-1 mr-[11px] w-11/12 h-max  "
+      w-3/4  h-max absolute top-1 left-1/2 -translate-x-1/2 "
     >
       <div>
         <h1 className="text-amber-400 text-xl font-medium">{flight?.id}</h1>

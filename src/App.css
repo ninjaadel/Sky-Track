@@ -118,3 +118,49 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (min-width: 500px) {
+  .xs\:fixed {
+    position: fixed;
+  }
+
+  .xs\:top-0 {
+    top: 0;
+  }
+
+  .xs\:top-4 {
+    top: 1rem;
+  }
+
+  .xs\:top-1\/2 {
+    top: 50%;
+  }
+
+  .xs\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .xs\:inset-x-0 {
+    left: 0;
+    right: 0;
+  }
+
+  .xs\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .xs\:inset-4 {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .xs\:z-50 {
+    z-index: 50;
+  }
+}

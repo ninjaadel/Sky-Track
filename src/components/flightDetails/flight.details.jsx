@@ -22,13 +22,13 @@ export default function FlightDetails() {
   if (!flight) return null;
 
   return (
-    <aside
-      className="absolute right-7 top-10 w-sm -translate-y-2 rounded-xl 
-  overflow-hidden bg-[var(--chart-1)] text-[var(--card-foreground)] "
-    >
-      <FlightHeader flight={flight} />
+    <aside className="xs:fixed xs:inset-0 xs:w-full xs:z-50
+md:static md:w-[350px] md:rounded-xl md:shadow md:mt-13
+bg-[var(--chart-1)] text-[var(--card-foreground)]
+flex-shrink-0 md:ml-auto">
       <FlightImage flight={flight} />
-      <div className="p-1"></div>
+
+      <div className="p-"></div>
       <FlightRoute flight={flight} />
       <FlightStatus flight={flight} />
       <FlightSchedule flight={flight} />

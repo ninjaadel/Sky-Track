@@ -22,7 +22,7 @@ export function FlightCardActions({ flightId }) {
   }, [dispatch, flightId, isFavorite]);
 
   return (
-    <div className="z-50 flex flex-col gap-2 absolute -top-0.5 opacity-0 group-hover:opacity-100 -right-1 transition-all duration-500 group-hover:-right-14 scale-0 group-hover:scale-100 px-2 h-full origin-top">
+    <div className="z-50 flex flex-col gap-2 absolute -top-0.5 opacity-0 group-hover:opacity-100 -right-1 transition-all duration-500 group-hover:sm:-right-14 scale-0 group-hover:scale-100 px-2 h-full origin-top sm:origin-top sm:-right-14 ">
       <Button
         onClick={toggleFavorite}
         asChild

@@ -1,7 +1,9 @@
+import { FlightHeader } from "./flightHeader";
+
 export function FlightImage({ flight }) {
   return (
     <div
-      className="w-full h-72 pt-28"
+      className=" h-72 pt-28 sm:rounded-t-xl relative w-full"
       style={{
         background: `linear-gradient(to top, ${flight?.colorGradient[0]},
     ${flight?.colorGradient[1]})`,
@@ -12,6 +14,7 @@ export function FlightImage({ flight }) {
         alt={flight?.airplane?.name}
         className="max-w-[95%] h-auto mx-auto relative"
       />
+      <FlightHeader flight={flight} />
     </div>
   );
 }
