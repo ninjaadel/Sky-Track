@@ -1,8 +1,9 @@
-import FlightCard from "./flightCard";
+import React, { useState, useEffect, useMemo } from "react";
 import { flights } from "../../data/flight";
-import { Filter } from "../filters/filter";
-import { useEffect, useMemo, useState } from "react";
 import { CardSkeleton } from "../ui/cardskeleton";
+import { Filter } from "../filters/filter";
+import FlightCard from "./flightCard";
+
 export default function FlightList() {
   const [fromCountry, setFromCountry] = useState();
   const [toCountry, setToCountry] = useState();
@@ -13,27 +14,37 @@ export default function FlightList() {
       setShowSkeleton(false);
     }, 3000);
 
-    return () => clearTimeout(timer); // cleanup!
+    return () => clearTimeout(timer);
   }, []);
 
-  const filteredCountry = useMemo(() => {
-    if (!fromCountry) return flights;
-    return flights.filter((flight) => flight.from.country === fromCountry);
-  }, [fromCountry]);
-   
-  const filteredToCountry = useMemo(() => {
-    if (!toCountry) return filteredCountry;
-    return filteredCountry.filter((flight) => flight.to.country === toCountry);
-  }, [toCountry, filteredCountry]);
-  return (
-    <div className=" xs:w-[90%] sm:w-[350px] flex-shrink-0">
-      <Filter fromCountry={fromCountry} setFromCountry={setFromCountry} toCountry={toCountry} setToCountry={setToCountry} />
-      <div className="space-y-2">
- 
+  const filteredFlights = useMemo(() => {
+    let result = flights;
+    
+    // "From" ülke filtresi
+    if (fromCountry && fromCountry !== "all") {
+      result = result.filter(flight => flight.from.country === fromCountry);
+    }
+    
+    // "To" ülke filtresi
+    if (toCountry && toCountry !== "all") {
+      result = result.filter(flight => flight.to.country === toCountry);
+    }
+    
+    return result;
+  }, [fromCountry, toCountry]);
 
+  return (
+    <div className="xs:w-[90%] sm:w-[350px] flex-shrink-0">
+      <Filter 
+        fromCountry={fromCountry} 
+        setFromCountry={setFromCountry} 
+        toCountry={toCountry} 
+        setToCountry={setToCountry} 
+      />
+      <div className="space-y-2">
         {showSkeleton
-          ? filteredCountry.map((_, i) => <CardSkeleton key={i} />)
-          : filteredCountry.map((flight, i) => (
+          ? filteredFlights.map((_, i) => <CardSkeleton key={i} />)
+          : filteredFlights.map((flight, i) => (
               <FlightCard key={i} flight={flight} />
             ))}
       </div>

@@ -7,13 +7,16 @@ import {
   SelectValue,
 } from "../ui/select";
 
-const FromCountries = [
+const fromCountries = [
   ...new Set(flights.map((flight) => flight?.from?.country)),
 ];
-const ToCountries = [...new Set(flights.map((flight) => flight?.to?.country))];
+const toCountries = [
+  ...new Set(flights.map((flight) => flight?.to?.country)),
+];
+
 export function Filter({ fromCountry, setFromCountry, toCountry, setToCountry }) {
   return (
-    <div className="bg-card  w-full flex justify-between mb-2 mt-1 rounded-t-lg xl:flex xl:inline-block">
+    <div className="bg-card xs:w-full sm:w-[240px] flex justify-between mb-2 mt-1 rounded-t-lg xl:flex xl:inline-block">
       <Select
         onValueChange={(value) =>
           setFromCountry(value === "all" ? null : value)
@@ -21,17 +24,18 @@ export function Filter({ fromCountry, setFromCountry, toCountry, setToCountry })
         value={fromCountry}
       >
         <SelectTrigger>
-          <SelectValue placeholder="choice country" />
+          <SelectValue placeholder="from" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">ALL</SelectItem>
-          {FromCountries.map((choice) => (
+          <SelectItem value="all">all</SelectItem>
+          {fromCountries.map((choice) => (
             <SelectItem key={choice} value={choice}>
               {choice}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
+      
       <Select
         onValueChange={(value) =>
           setToCountry(value === "all" ? null : value)
@@ -39,11 +43,11 @@ export function Filter({ fromCountry, setFromCountry, toCountry, setToCountry })
         value={toCountry}
       >
         <SelectTrigger>
-          <SelectValue placeholder="choice country" />
+          <SelectValue placeholder="to" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">ALL</SelectItem>
-          {FromCountries.map((choice) => (
+          <SelectItem value="all">all</SelectItem>
+          {toCountries.map((choice) => (
             <SelectItem key={choice} value={choice}>
               {choice}
             </SelectItem>
