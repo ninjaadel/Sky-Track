@@ -22,7 +22,7 @@ export default function FlightDetails() {
   if (!flight) return null;
 
   return (
-    <aside className="xs:fixed xs:inset-0 xs:w-full xs:z-50
+    <aside className=" xs:fixed xs:inset-0 xs:w-full xs:z-50
 md:static md:w-[350px] md:rounded-xl md:shadow md:mt-13
 bg-[var(--chart-1)] text-[var(--card-foreground)]
 flex-shrink-0 md:ml-auto">

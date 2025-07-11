@@ -10,15 +10,33 @@ import {
 const FromCountries = [
   ...new Set(flights.map((flight) => flight?.from?.country)),
 ];
-
-export function Filter({ fromCountry, setFromCountry }) {
+const ToCountries = [...new Set(flights.map((flight) => flight?.to?.country))];
+export function Filter({ fromCountry, setFromCountry, toCountry, setToCountry }) {
   return (
-    <div className="bg-card  w-full flex justify-center mb-2 mt-1 rounded-t-lg xl:flex xl:inline-block">
+    <div className="bg-card  w-full flex justify-between mb-2 mt-1 rounded-t-lg xl:flex xl:inline-block">
       <Select
         onValueChange={(value) =>
           setFromCountry(value === "all" ? null : value)
         }
         value={fromCountry}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder="choice country" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">ALL</SelectItem>
+          {FromCountries.map((choice) => (
+            <SelectItem key={choice} value={choice}>
+              {choice}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+      <Select
+        onValueChange={(value) =>
+          setToCountry(value === "all" ? null : value)
+        }
+        value={toCountry}
       >
         <SelectTrigger>
           <SelectValue placeholder="choice country" />

@@ -7,8 +7,8 @@ module.exports = {
       // özelleştirme alanların
     },
     screens: {
-      xxs: "360px",
-      xs: "480px",
+      
+      xs: "360px",
       sm: "768px",
       md: "992px",
       lg: "1200px",

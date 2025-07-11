@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { CardSkeleton } from "../ui/cardskeleton";
 export default function FlightList() {
   const [fromCountry, setFromCountry] = useState();
+  const [toCountry, setToCountry] = useState();
   const [showSkeleton, setShowSkeleton] = useState(true);
 
   useEffect(() => {
@@ -19,10 +20,14 @@ export default function FlightList() {
     if (!fromCountry) return flights;
     return flights.filter((flight) => flight.from.country === fromCountry);
   }, [fromCountry]);
-
+   
+  const filteredToCountry = useMemo(() => {
+    if (!toCountry) return filteredCountry;
+    return filteredCountry.filter((flight) => flight.to.country === toCountry);
+  }, [toCountry, filteredCountry]);
   return (
-    <div className="xs:w-full sm:w-[350px] flex-shrink-0">
-      <Filter fromCountry={fromCountry} setFromCountry={setFromCountry} />
+    <div className=" xs:w-[90%] sm:w-[350px] flex-shrink-0">
+      <Filter fromCountry={fromCountry} setFromCountry={setFromCountry} toCountry={toCountry} setToCountry={setToCountry} />
       <div className="space-y-2">
  
 
