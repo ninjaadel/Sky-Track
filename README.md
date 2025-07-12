@@ -1,12 +1,8 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ На этой неделе я почти не смотрел видео, всё делал сам.
+Было трудно, особенно с адаптивной версткой.
+Сейчас всё работает от 500px и выше (xs), но меньше 500px — не работает.
+В Header я использовал flex-col на xs, а на sm — justify-between.
+Но если xs или base идут первыми — только они работают.
+Такая же проблема с fixed и absolute — ведут себя по-разному в зависимости от порядка.
+Прошу проверить именно адаптивность кода.
+Для удобства я создал отдельную папку для ревью — она находится в папке public.
