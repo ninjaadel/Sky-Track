@@ -16,7 +16,7 @@ const toCountries = [
 
 export function Filter({ fromCountry, setFromCountry, toCountry, setToCountry }) {
   return (
-    <div className="bg-card xs:w-full sm:w-[240px] flex justify-between mb-2 mt-1 rounded-t-lg xl:flex xl:inline-block">
+    <div className="bg-card xs:w-full sm:w-[240px] flex justify-between mb-2 mt-1 rounded-t-lg">
       <Select
         onValueChange={(value) =>
           setFromCountry(value === "all" ? null : value)

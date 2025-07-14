@@ -1,9 +1,9 @@
 import { flights } from "../../data/flight";
 
 import { flightQueryKey } from "../../data/for-query_param";
-
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { FlightHeader } from "./flightHeader";
 import { FlightInfarmation } from "./flightInfarmation";
 import { FlightImage } from "./flightImage";
@@ -14,18 +14,31 @@ import { FlightActions } from "./flightAction";
 export default function FlightDetails() {
   const [searchParams] = useSearchParams();
   const selectedFlight = searchParams.get(flightQueryKey);
+  const [isVisible, setVisible] = useState(false);
   const flight = useMemo(
     () => flights.find((f) => f.id === selectedFlight),
     [selectedFlight]
   );
+   useEffect(() => {
+    if (flight) {
+      setVisible(true);
+    }
+    return () => {
+      setVisible(false);
+    };
+  }, [flight]);
+
 
   if (!flight) return null;
 
   return (
-    <aside className=" xs:fixed xs:inset-0 xs:w-full xs:z-50
-md:static md:w-[350px] md:rounded-xl md:shadow md:mt-13
-bg-[var(--chart-1)] text-[var(--card-foreground)]
-flex-shrink-0 md:ml-auto">
+    <aside className={`fixed inset-0 w-full z-50
+  
+
+  md:static md:w-[350px] md:rounded-xl md:shadow md:mt-10
+  bg-[var(--chart-1)] text-[var(--card-foreground)]
+  ${isVisible ? 'translate-x-0' : 'translate-x-full'}
+  flex-shrink-0 md:ml-auto transition-transform duration-500 ease-in-out`}>
       <FlightImage flight={flight} />
 
       <div className="p-"></div>

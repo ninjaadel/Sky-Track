@@ -119,7 +119,7 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 360px) {
   .xs\:fixed {
     position: fixed;
   }
@@ -161,6 +161,52 @@
   }
 
   .xs\:z-50 {
+    z-index: 50;
+  }
+}
+
+@media (min-width: 500px) {
+  .sm\:fixed {
+    position: fixed;
+  }
+
+  .sm\:top-0 {
+    top: 0;
+  }
+
+  .sm\:top-4 {
+    top: 1rem;
+  }
+
+  .sm\:top-1\/2 {
+    top: 50%;
+  }
+
+  .sm\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .sm\:inset-x-0 {
+    left: 0;
+    right: 0;
+  }
+
+  .sm\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .sm\:inset-4 {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .sm\:z-50 {
     z-index: 50;
   }
 }

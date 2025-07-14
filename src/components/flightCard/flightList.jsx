@@ -34,12 +34,13 @@ export default function FlightList() {
   }, [fromCountry, toCountry]);
 
   return (
-    <div className="xs:w-[90%] sm:w-[350px] flex-shrink-0">
-      <Filter 
-        fromCountry={fromCountry} 
-        setFromCountry={setFromCountry} 
-        toCountry={toCountry} 
-        setToCountry={setToCountry} 
+    <div className="xs:w-[90%] sm:w-[350px] sm:mx-auto md:w-[350px">
+      <Filter
+        fromCountry={fromCountry}
+        setFromCountry={setFromCountry}
+        toCountry={toCountry}
+        setToCountry={setToCountry}
+      />
       />
       <div className="space-y-2">
         {showSkeleton
