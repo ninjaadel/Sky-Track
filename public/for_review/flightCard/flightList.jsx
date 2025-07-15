@@ -34,15 +34,14 @@ export default function FlightList() {
   }, [fromCountry, toCountry]);
 
   return (
-    <div className=" z-10 xs:w-[90%] sm:w-[350px] flex-shrink-0">
-      <Filter
-        fromCountry={fromCountry}
-        setFromCountry={setFromCountry}
-        toCountry={toCountry}
-        setToCountry={setToCountry}
+    <div className="xs:w-[90%] sm:w-[350px] flex-shrink-0">
+      <Filter 
+        fromCountry={fromCountry} 
+        setFromCountry={setFromCountry} 
+        toCountry={toCountry} 
+        setToCountry={setToCountry} 
       />
-    
-      <div className="space-y-1">
+      <div className="space-y-2">
         {showSkeleton
           ? filteredFlights.map((_, i) => <CardSkeleton key={i} />)
           : filteredFlights.map((flight, i) => (

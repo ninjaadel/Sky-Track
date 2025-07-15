@@ -16,12 +16,12 @@ export function FlightRoute({ flight }) {
       <div
         className="flex items-center justify-center mb-2 
       rounded-full w-12 h-12 absolute top-1/2 -translate-y-1/2 left-1/2
-      -translate-x-1/2 bg-[var(--background)] opacity-70 border-1 border-black"
+      -translate-x-1/2 bg-[var(--background)] opacity-70"
       >
-        <Plane className="text-amber-400 " size={22}  />
+        <Plane className="text-amber-400 " size={22} />
       </div>
       <div className="bg-[var(--card)]  px-element py-element rounded-tr-xl text-center">
-        <h3 className="text-[var(--foreground)] text-4xl font-semibold mb-1.5">
+        <h3 className="text-[var(--foreground)] text-4xl font-sembolid mb-1.5">
           {flight?.to.code}
         </h3>
         <p className="text-[var(--foreground)] font-medium mb-1 text-lg">
