@@ -75,3 +75,24 @@ flight status inşa edildi artık hem liste de hem detailste flight status kontr
 responsive için uğraştım çok zorluk çektim normalde çalışması gereken responsive çalışmıyor onu alternativini arayarak tasarlıysbildim
 
 
+<!-- 10 temmuz -->
+
+flightliste filtreleme olarak güncelleme yaptım artık from ve to diye çalışıyor
+
+<!-- 11 temmuz -->
+
+responsive için uğraştım yeterli olmasada bir şeyler güncelledim
+
+<!-- 14 temmuz -->
+
+animasyon yaptım artık details yavaşça soldan çıkıyor
+
+
+<!-- 15 temmuz -->
+sonunda haritaları ekledim hem dark hem light destekli kartımız var
+ve sonunda içimi rahatlatacak responsive tamamladım headeri tamamen düzeltim tüm yerleri düzenledim
+
+
+<!-- 16 temmuz -->
+
+haritalarıma işaret ve çizgiler ekledim artık her uçuşun rotasını gösteren çizgi var
