@@ -3,7 +3,7 @@ import { useTheme } from "../providers/useTheme";
 
 export function ProgressBar({ percentage }) {
   const { theme } = useTheme();
-  const fillColor = theme === "dark" ? "#fff" : "#000"; // dark'ta beyaz, light'ta koyu
+  const fillColor = theme === "dark" ? "#fff" : "#000"; // dark'ta beyaz, light'ta siyah
 
   return (
     <div className="w-full h-1 bg-gray-200 rounded-full dark:bg-gray-700 my-2">

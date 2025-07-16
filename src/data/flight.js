@@ -27,6 +27,10 @@ export const flights = [
       timezone: "UTC +8",
       code: "PEK",
     },
+    coords: {
+      from: [42.6983, 23.3199],
+      to: [39.9075, 116.3972],
+    },
     airplane: {
       image: Plane.turkish,
       name: "Airbus A330",
@@ -67,6 +71,10 @@ export const flights = [
       countryCode: "CY",
       timezone: "UTC +3",
       code: "LCA",
+    },
+    coords: {
+      from: [53.3501, -6.2662],
+      to: [34.9231, 33.6340],
     },
     airplane: {
       image: Plane.rynair,
@@ -109,6 +117,10 @@ export const flights = [
       timezone: "UTC +4",
       code: "TBS",
     },
+    coords: {
+      from: [43.7031, 7.2661],
+      to: [41.7151, 44.8271],
+    },
     airplane: {
       image: Plane.lufthansa,
       name: "Airbus A320neo",
@@ -150,6 +162,10 @@ export const flights = [
       timezone: "UTC +4",
       code: "GYD",
     },
+    coords: {
+      from: [41.1496, -8.6110],
+      to: [40.4093, 49.8671],
+    },
     airplane: {
       image: Plane.s7,
       name: "Airbus A220-300",
@@ -190,6 +206,10 @@ export const flights = [
       countryCode: "OM",
       timezone: "UTC +4",
       code: "MCT",
+    },
+    coords: {
+      from: [42.5048, 27.4626],
+      to: [23.5880, 58.3829],
     },
     airplane: {
       image: Plane.swiss,
