@@ -1,6 +1,6 @@
 import useAppSelector from "../../hooks/useAppSelector";
 import { flights } from "../../data/flight";
-import FlightCard from "../../../public/for_review/flightCard/flightCard";
+import FlightCard from "../flightCard/flightCard";
 
 export default function FavoriteList() {
   const favorites = useAppSelector((state) => state.favorites);
