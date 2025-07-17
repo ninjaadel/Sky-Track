@@ -1,5 +1,5 @@
 import {Header} from "../../components/header/header";
-import FlightList from "../../../public/for_review/flightCard/flightList";
+import FlightList from "../../components/flightCard/flightList";
 import FlightDetails from "../../components/flightDetails/flight.details";
 import { useTheme } from "../../providers/useTheme";
 import MyMap from "../../components/map/map";
