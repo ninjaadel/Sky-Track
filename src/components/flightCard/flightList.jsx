@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { flights } from "../../../src/data/flight";
-import { CardSkeleton } from "../../../src/components/ui/cardskeleton";
+import { CardSkeleton } from "./skeleton";
 import { Filter } from "../../../src/components/filters/filter";
 import FlightCard from "./flightCard";
 

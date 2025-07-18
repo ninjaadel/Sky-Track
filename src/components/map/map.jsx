@@ -1,17 +1,21 @@
 import { useSearchParams } from "react-router-dom";
 import { flights } from "../../data/flight";
-import { FlightPath } from "./flightPath";
+import  FlightPath  from "./flightPath";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet/hooks";
-import { FlightPathProgress } from "./MapProgress";
+import  {FlightPathProgress } from "./MapProgress";
 import L from "leaflet";
 import { Marker } from "react-leaflet";
 import Plane from "../../assets/plane/planeIconMap.png";
 import "leaflet-rotatedmarker";
 import apiKey from "../../../apikey/apiKey";
-
+import { MapFallback } from "./MapFallback";
+import { useState } from "react";
+import  MapLoading from "./MapLoading";
 function MapCenterUpdater({ center }) {
+  const [tileError, setTileError] = useState(false);
+  
   const map = useMap();
   useEffect(() => {
     map.setView(center);
@@ -31,6 +35,8 @@ function FitBoundsDynamic({ from, to }) {
 
 function MyMap({ theme }) {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [tileError, setTileError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const id = searchParams.get("flight");
   const flight = flights.find(f => f.id === id);
 
@@ -57,25 +63,48 @@ function MyMap({ theme }) {
 
   const progressIcon = new L.Icon({
     iconUrl: Plane,
-    iconSize: [50, 50],
-    iconAnchor: [20, 20],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     rotationAngle: 120,
+    
   });
-
+  const getCurveCoords = (from, to) => {
+  const line = turf.lineString([
+    [from[1], from[0]],
+    [to[1], to[0]],
+  ]);
+  const curved = turf.bezierSpline(line, { sharpness: 0.85, resolution: 500 });
+  return curved.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+};
+  
+  if (tileError) {
+    return <MapFallback />;
+  }
+ if (loading) {
+    return <MapLoading />;
+  }
   return (
-    <MapContainer center={center} zoom={3} style={{ height: "100vh", width: "100%" }}>
-      <TileLayer url={tileUrl} />
+    <MapContainer center={center} zoom={3} style={{ height: "100vh", width: "100%" }} >
+      <TileLayer
+  url={tileUrl}
+  eventHandlers={{
+    load: () => setLoading(false),
+    tileerror: () => setTileError(true)
+  }}
+/>
       {flight
         ? <FitBoundsDynamic from={flight.coords.from} to={flight.coords.to} />
         : <MapCenterUpdater center={center} />
       }
 
-      {/* Tüm uçuşların mevcut konumuna küçük Marker ekle */}
+      
       {flights.map(f => (
         <Marker
           key={f.id}
           position={getProgressPosition(f.coords.from, f.coords.to, f.progress)}
           icon={progressIcon}
+          // İlerleme oranına göre döndürme
+          opacity={0.6}
           eventHandlers={{
             click: () => setSearchParams({ flight: f.id })
           }}

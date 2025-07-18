@@ -2,7 +2,7 @@
 import { Polyline, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
-export function FlightPath({ from, to, fromCity, toCity, color = "#ccc" , opacity = 0.5, dashArray = "5, 10" }) {
+export default function FlightPath({ from, to, fromCity, toCity, color = "#ccc" , opacity = 0.5, dashArray = "5, 10" }) {
   const icon = new L.Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", 
     iconSize: [24, 24],
@@ -11,6 +11,8 @@ export function FlightPath({ from, to, fromCity, toCity, color = "#ccc" , opacit
   const polylineOptions = {
     color: color,
     weight: 1,
+    smoothFactor: 3,
+
     dashArray: dashArray,
   };
   const progressIcon = new L.Icon({

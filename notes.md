@@ -96,3 +96,8 @@ ve sonunda içimi rahatlatacak responsive tamamladım headeri tamamen düzeltim 
 <!-- 16 temmuz -->
 
 haritalarıma işaret ve çizgiler ekledim artık her uçuşun rotasını gösteren çizgi var
+
+
+<!-- 17 temmuz  -->
+
+mape progressBarlara uygun çizgi düzeltik uçağın girmediği yerler aralıklı gittiği yer kırmızı ve normal haritada uçak iconu var üzerine basıldığında useParams ile çalışıyor zoom ve ortalama hesplanmış şekilde ve duration ayarlı
