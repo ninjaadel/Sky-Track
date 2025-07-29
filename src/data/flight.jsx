@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { logo, Plane, Flags } from "../constans/images";
 
-const API_KEY = "ffe25874c7b9a56b49ce7d672760542e";
+const API_KEY = import.meta.env.VITE_AVIATION_API_KEY;
 const API_BASE_URL = "https://api.aviationstack.com/v1";
 
 const getFlightProgress = (
