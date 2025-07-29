@@ -1,3 +1,6 @@
+import { useSearchParams } from "react-router-dom";
+import { useFlights } from "../../data/flight";
+import { useMemo } from "react";
 export function FlightInfarmation({ flight }) {
   return (
     <div className="my-2  px-2  ">
@@ -26,11 +29,11 @@ export function FlightInfarmation({ flight }) {
       <div className="grid grid-cols-2 gap-1 mb-1 rounded-bl-lg rounded-br-lg  px-2 bg-[var(--card)] text-[var(--card-foreground)]">
         <div className="bg-card  flex items-center justify-between rounded-bl-xl">
           <p className="text-muted-foreground">Speed</p>
-          <p>870 km/h</p>
+          <p>{flight?.speed} km/h</p>
         </div>
         <div className="bg-card px-mini-element py-mini-element flex items-center justify-between rounded-br-xl">
           <p className="text-muted-foreground">Altitude</p>
-          <p>11 300 m</p>
+          <p>{flight?.altitude} m</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export function FlightHeader({ flight }) {
     >
       <div>
         <h1 className="text-amber-400 text-xl font-medium">{flight?.id}</h1>
-        <p className="text-[var(--muted-foreground)] text-sm">
+        <p className="text-[var(--muted-foreground)] text-sm px-1">
           {flight?.airline.name}
         </p>
       </div>
