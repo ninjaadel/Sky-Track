@@ -47,12 +47,6 @@ export default function FlightPath({
   progress = 0,
   showProgress = false,
 }) {
-  const icon = new L.Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
-    iconSize: [3, 3],
-    iconAnchor: [1, 0],
-  });
-
   const curvedPath = createCurvedPath(from, to);
 
   // Progress'e göre path'i böl
@@ -85,10 +79,10 @@ export default function FlightPath({
 
   return (
     <>
-      <Marker position={from} icon={icon}>
+      <Marker position={from}>
         <Popup>{fromCity} (Departure)</Popup>
       </Marker>
-      <Marker position={to} icon={icon}>
+      <Marker position={to}>
         <Popup>{toCity} (Arrival)</Popup>
       </Marker>
 

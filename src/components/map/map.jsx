@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useMap } from "react-leaflet/hooks";
 import L from "leaflet";
 import { Marker } from "react-leaflet";
-import Plane from "../../assets/plane/logo.svg";
+import Plane from "../../assets/plane/planeIconMap.png";
 import "leaflet-rotatedmarker";
 import apiKey from "../../../apikey/apiKey";
 import { MapFallback } from "./MapFallback";
